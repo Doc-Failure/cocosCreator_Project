@@ -6,4 +6,4 @@ You can found CocosCreator here: http://www.cocos2d-x.org/creator .
  2 - Go in the Scene directory and double click on the "Main" scene.
  3 - Press the Play Button 
  
- ![PlayButton]( https://github.com/St3fanoC/cocosCreator_Project/tree/master/assets/sprites/githubPlay.png )
+ ![PlayButton](/assets/sprites/githubPlay.png )
