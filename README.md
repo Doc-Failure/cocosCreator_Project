@@ -7,3 +7,5 @@ You can found CocosCreator here: http://www.cocos2d-x.org/creator .
  3 - Press the Play Button   
  
  ![PlayButton](/assets/sprites/githubPlay.png )
+
+You can found a demo of the game here: https://www.kongregate.com/games/EL_ChimiChanga/badbee
