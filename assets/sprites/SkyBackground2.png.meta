@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "6be69562-49cf-4a32-8d38-cfcae8961fa7",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "SkyBackground2": {
+      "ver": "1.0.3",
+      "uuid": "2df82881-f10b-4d5c-954c-de9c0e6306c5",
+      "rawTextureUuid": "6be69562-49cf-4a32-8d38-cfcae8961fa7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 455,
+      "height": 901,
+      "rawWidth": 455,
+      "rawHeight": 901,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
