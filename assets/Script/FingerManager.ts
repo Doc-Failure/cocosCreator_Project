@@ -6,6 +6,7 @@ export default class FingerManager extends cc.Component {
     xOrigin:number;
     yDestination:number;
     xDestination:number;
+    speed:number;
     onLoad() {
         cc.director.getCollisionManager().enabled = true;
         this.yOrigin=this.node.position.y;
@@ -14,20 +15,17 @@ export default class FingerManager extends cc.Component {
         this.xDestination=this.node.position.x+100;
     } 
     
-    update(){
-        
-        if(this.node.position.y===this.yOrigin){
-            let randomNum : number = Math.random();
-            if(randomNum > 0.5){
-                console.log(randomNum+'');
-                //this.
-                //this.moveToPos = cc.p(0, 0);
-                //this.m (this.xOrigin, this.yDestination+1);
-
-            }
+    update(dt){
+        this.node.position.y -=this.speed*dt;
+        if(this.node.position.y!=this.yOrigin){
+            //let randomNum : number = Math.random();
+            //if(randomNum > 0.5){
+            this.speed=100;
+            //}
+        }else if(this.node.position.y>=this.yDestination){
+            this.speed=-100;
+        }else{
+            this.speed=0;
         }
-        /*if(this.node.position.y>this.yDestination){
-            this.node.setPosition(this.xOrigin, this.yOrigin);
-        }*/
     }
 }
