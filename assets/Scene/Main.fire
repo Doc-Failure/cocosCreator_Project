@@ -78,7 +78,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 34
+        "__id__": 37
       }
     ],
     "_prefab": null,
@@ -843,7 +843,9 @@
     "node": {
       "__id__": 20
     },
-    "_enabled": true
+    "_enabled": true,
+    "yDistance": 100,
+    "duration": 0.5
   },
   {
     "__type__": "cc.Node",
@@ -950,25 +952,15 @@
     }
   },
   {
-    "__type__": "2baeeA2l3lMDIAJn2yA2xs3",
+    "__type__": "f9124vcWqlPwLqKRR0lknFj",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 24
     },
-    "_enabled": false,
-    "GameManager": null,
-    "Bee": {
-      "__id__": 7
-    },
-    "isFingerPressed": false,
-    "isFingerAlive": true,
-    "finger1": {
-      "__id__": 20
-    },
-    "finger2": {
-      "__id__": 28
-    }
+    "_enabled": true,
+    "yDistance": 100,
+    "duration": 0.5
   },
   {
     "__type__": "cc.Node",
@@ -1075,25 +1067,15 @@
     }
   },
   {
-    "__type__": "2baeeA2l3lMDIAJn2yA2xs3",
+    "__type__": "f9124vcWqlPwLqKRR0lknFj",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 28
     },
-    "_enabled": false,
-    "GameManager": null,
-    "Bee": {
-      "__id__": 7
-    },
-    "isFingerPressed": false,
-    "isFingerAlive": true,
-    "finger1": {
-      "__id__": 20
-    },
-    "finger2": {
-      "__id__": 24
-    }
+    "_enabled": true,
+    "yDistance": 100,
+    "duration": 0.5
   },
   {
     "__type__": "cc.Node",
@@ -1108,6 +1090,9 @@
     "_components": [
       {
         "__id__": 33
+      },
+      {
+        "__id__": 34
       }
     ],
     "_prefab": null,
@@ -1174,20 +1159,16 @@
     "_atlas": null
   },
   {
-    "__type__": "cc.Canvas",
+    "__type__": "0ec74YXLuJEmpHWuH92Vcgo",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 2
+      "__id__": 32
     },
     "_enabled": true,
-    "_designResolution": {
-      "__type__": "cc.Size",
-      "width": 640,
-      "height": 960
-    },
-    "_fitWidth": false,
-    "_fitHeight": true
+    "isGameOnManager": {
+      "__id__": 35
+    }
   },
   {
     "__type__": "cc.Node",
@@ -1252,9 +1233,22 @@
     "canvas": {
       "__id__": 2
     },
-    "node_title": {
-      "__id__": 32
+    "isGameOn": false
+  },
+  {
+    "__type__": "cc.Canvas",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
     },
-    "isGameStarted": false
+    "_enabled": true,
+    "_designResolution": {
+      "__type__": "cc.Size",
+      "width": 640,
+      "height": 960
+    },
+    "_fitWidth": false,
+    "_fitHeight": true
   }
 ]

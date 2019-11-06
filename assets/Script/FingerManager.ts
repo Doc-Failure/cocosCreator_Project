@@ -2,30 +2,43 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class FingerManager extends cc.Component {
+
+    //Definisce di quanta distanza voglio spostare il dito
+    @property
+    yDistance:number=100;
+    //Definisce quanto velocemente voglio spostare il dito
+    @property
+    duration:number=0.5;
+    action_goUp:cc.ActionInterval;
+    action_goDown:cc.ActionInterval;
+    //Definisce la posizione iniziale del dito
     yOrigin:number;
-    xOrigin:number;
-    yDestination:number;
-    xDestination:number;
-    speed:number;
+    frames:number=1;
+
     onLoad() {
-        cc.director.getCollisionManager().enabled = true;
         this.yOrigin=this.node.position.y;
-        this.xOrigin=this.node.position.x;
-        this.yDestination=this.node.position.y+100;
-        this.xDestination=this.node.position.x+100;
+        cc.director.getCollisionManager().enabled = true;
+        //Funzione per portare su le dita
+        this.action_goUp = cc.moveBy(this.duration, cc.v2(0, this.yDistance)).easing(cc.easeSineOut());
+        //Funzione per portare giù le dita
+        this.action_goDown = cc.moveBy(this.duration, cc.v2(0, -this.yDistance)).easing(cc.easeSineOut());
     } 
     
     update(dt){
-        this.node.position.y -=this.speed*dt;
-        if(this.node.position.y!=this.yOrigin){
-            //let randomNum : number = Math.random();
-            //if(randomNum > 0.5){
-            this.speed=100;
-            //}
-        }else if(this.node.position.y>=this.yDestination){
-            this.speed=-100;
+        if(this.frames%50==0){
+            if(this.yOrigin-1 <=this.node.position.y && this.node.position.y<=this.yOrigin+1){
+                let randomNum : number = Math.random();
+                if(randomNum>0.6){
+                    this.node.runAction(this.action_goUp);
+                }
+            }
+            this.frames=1;
         }else{
-            this.speed=0;
+            this.frames++;
+        }
+        console.log(this.yOrigin+' '+(this.node.position.y-this.yDistance));
+        if(this.yOrigin>=(this.node.position.y-this.yDistance-1) && this.yOrigin<=(this.node.position.y-this.yDistance+1)){
+            this.node.runAction(this.action_goDown);
         }
     }
 }

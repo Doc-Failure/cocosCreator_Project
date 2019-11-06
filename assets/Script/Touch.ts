@@ -5,24 +5,25 @@ export default class Touch extends cc.Component {
   @property(cc.Node)
   canvas: cc.Node = null;
   
-  @property(cc.Node)
-  node_title: cc.Node = null;
-  
   @property
-  isGameStarted: boolean=false;
-
+  isGameOn: boolean=false;
 
   onLoad() {
     var self = this;
     //self.moveToPos = cc.p(0, 0);
     self.canvas.on(cc.Node.EventType.TOUCH_START, event => this.onTouch(event), self.node);
+    //cc.game.pause();
   }
 
   onTouch(event){
-    if(!this.isGameStarted){
-      this.isGameStarted=true;
-      this.node_title.active=false;
+    if(!this.isGameOn){
+      this.isGameOn=true;
     }
+  }
+
+  getGameStatus(): boolean{
+    
+    return this.isGameOn;
   }
 
 }
