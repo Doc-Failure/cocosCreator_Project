@@ -21,8 +21,6 @@ export default class Touch extends cc.Component {
     if(!this.isGameOn){
       this.isGameOn=true;
     } 
-    console.log(event.getLocation().x+' '+cc.view.getCanvasSize().height);
-    debugger;
     if(event.getLocation().x < cc.view.getCanvasSize().height / 3){
       this.beeManager.getComponent('BeeScript').moveBee(-1);
     }else if( event.getLocation().x > cc.view.getCanvasSize().height / 3 && event.getLocation().x < cc.view.getCanvasSize().height / 3 *2){
@@ -35,7 +33,10 @@ export default class Touch extends cc.Component {
   }
 
   getGameStatus(): boolean{
-    
+    return this.isGameOn;
+  }
+  setGameStatus(newGameStatus: boolean): boolean{
+    this.isGameOn=newGameStatus;
     return this.isGameOn;
   }
 

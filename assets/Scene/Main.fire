@@ -623,7 +623,7 @@
     "node": {
       "__id__": 7
     },
-    "_enabled": false,
+    "_enabled": true,
     "_spriteFrame": {
       "__uuid__": "b9ae5f5d-b540-477c-98f2-2061da4ec417"
     },
@@ -649,9 +649,7 @@
     "node": {
       "__id__": 7
     },
-    "_enabled": true,
-    "duration": 0.15,
-    "xDistance": 400
+    "_enabled": true
   },
   {
     "__type__": "cc.BoxCollider",
@@ -843,8 +841,6 @@
       "__id__": 20
     },
     "_enabled": true,
-    "yDistance": 100,
-    "duration": 0.5,
     "isGameOnManager": {
       "__id__": 24
     }
@@ -1028,8 +1024,6 @@
       "__id__": 26
     },
     "_enabled": true,
-    "yDistance": 100,
-    "duration": 0.5,
     "isGameOnManager": {
       "__id__": 24
     }
@@ -1146,8 +1140,6 @@
       "__id__": 30
     },
     "_enabled": true,
-    "yDistance": 100,
-    "duration": 0.5,
     "isGameOnManager": {
       "__id__": 24
     }
