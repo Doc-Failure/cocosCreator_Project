@@ -29,36 +29,42 @@ export default class FingerManager extends cc.Component {
     } 
     
     update(dt){
-        if(this.isGameOnManager.getComponent('Touch').getGameStatus()){
-            if(this.isFingerAlive){
-                if(this.frames%50==0){
-                    if(this.yOrigin-1 <=this.node.position.y && this.node.position.y<=this.yOrigin+1){
-                        let randomNum : number = Math.random();
-                        if(randomNum>0.6){
-                            this.node.runAction(this.action_goUp);
+        if(this.isFingerAlive){
+            if(this.isGameOnManager.getComponent('Touch').getGameStatus()){
+                    if(this.frames%50==0){
+                        if(this.yOrigin-1 <=this.node.position.y && this.node.position.y<=this.yOrigin+1){
+                            let randomNum : number = Math.random();
+                            if(randomNum>0.6){
+                                this.node.runAction(this.action_goUp);
+                            }
                         }
+                        this.frames=1;
+                    }else{
+                        this.frames++;
                     }
-                    this.frames=1;
-                }else{
-                    this.frames++;
+                    if(this.yOrigin>=(this.node.position.y-this.yDistance-1) && this.yOrigin<=(this.node.position.y-this.yDistance+1)){
+                        this.node.runAction(this.action_goDown);
+                    }
                 }
-                if(this.yOrigin>=(this.node.position.y-this.yDistance-1) && this.yOrigin<=(this.node.position.y-this.yDistance+1)){
-                    this.node.runAction(this.action_goDown);
-                }
-            }
+        }else{
+            //Qui voglio ingrandire e rimpicciolire la dimensione del dito
+            //this.node.width
         }
     }
 
 
   //when the Bee touch a finger it is not more usable
   onCollisionEnter(other, self) {
-    //we change the color of the finger
-    self.node.setColor(new cc.Color(255, 0, 0));
-    //we send the finger back
     //set the finger as dead
-    self.isFingerAlive = false;
-    //and finally send forward another finger.
-    //cc.game.pause();
-    //this.GameManager.active = true;
+    this.isFingerAlive = false;
+    //we change the color of the finger
+    this.node.getChildByName("finger").active=false;
+    this.node.getChildByName("fingerOuch").active=true;
+    //and finally we send the finger back
+    this.node.runAction(this.action_goDown);
+  }
+
+  getIsFingerAlive() {
+      return this.isFingerAlive;
   }
 }
