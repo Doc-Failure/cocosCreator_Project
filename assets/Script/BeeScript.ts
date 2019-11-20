@@ -1,7 +1,7 @@
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class BeeScript extends cc.Component {
 
   //Speed of the movement of the Bee
   duration: number = 0.2;
@@ -17,13 +17,15 @@ export default class NewClass extends cc.Component {
   middleFinger: cc.Node = null;
   @property(cc.Node)
   rightFinger: cc.Node = null;
+  @property(cc.Node)
+  gameMind: cc.Node = null;
 
   update(_dt){
     this.moveBee();
     if(!this.leftFinger.getComponent('FingerManager').getIsFingerAlive() &&
         !this.middleFinger.getComponent('FingerManager').getIsFingerAlive() &&
           !this.rightFinger.getComponent('FingerManager').getIsFingerAlive()){
-      cc.game.pause();
+            this.gameMind.getComponent('GameMind').setGameState(false);
     }
   }
 
