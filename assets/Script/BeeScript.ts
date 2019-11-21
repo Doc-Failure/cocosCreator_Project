@@ -4,7 +4,7 @@ const {ccclass, property} = cc._decorator;
 export default class BeeScript extends cc.Component {
 
   //Speed of the movement of the Bee
-  duration: number = 0.2;
+  duration: number = 0.3;
   
   yDistance: number = 230;
   xDistance: number = 220;
@@ -42,10 +42,9 @@ export default class BeeScript extends cc.Component {
         if (this.node.position.y > 350) {
           //we choose which finger we need to sting
           //move the Bee to the bottom of the screen
-          this.node.runAction(cc.moveTo(this.duration, this.xDistance*xDirection, -this.yDistance));
+          this.node.runAction(cc.moveTo(this.duration, cc.p(this.xDistance*xDirection, -this.yDistance)));
           //We increase the difficulty of the game
           this.direction = +1;
-          
         }
       }
     }

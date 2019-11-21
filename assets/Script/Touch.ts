@@ -22,9 +22,11 @@ export default class Touch extends cc.Component {
   onTouch(event){
     if(!this.isGameOn){
       this.isGameOn=true;
-      this.fingersManager.getChildByName('leftFinger').getComponent('FingerManager').setFingerLive(true);
-      this.fingersManager.getChildByName('middleFinger').getComponent('FingerManager').setFingerLive(true);
-      this.fingersManager.getChildByName('rightFinger').getComponent('FingerManager').setFingerLive(true);
+      if( !this.fingersManager.getChildByName('leftFinger').getComponent('FingerManager').getIsFingerAlive()
+        && !this.fingersManager.getChildByName('leftFinger').getComponent('FingerManager').getIsFingerAlive()
+        && !this.fingersManager.getChildByName('rightFinger').getComponent('FingerManager').getIsFingerAlive()){
+          cc.game.restart();
+      }
       //Fare il restart se tutte le dita sono morte
       cc.game.resume();
     } 

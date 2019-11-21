@@ -6,7 +6,7 @@
   "fb-instant-games": {},
   "includeAnySDK": false,
   "includeSDKBox": false,
-  "inlineSpriteFrames": true,
+  "inlineSpriteFrames": false,
   "inlineSpriteFrames_native": true,
   "jailbreakPlatform": false,
   "md5Cache": false,
@@ -27,7 +27,7 @@
   "renderMode": "0",
   "startScene": "912f63ce-339e-444f-96e7-a1b1ca4e5fee",
   "title": "BadBee",
-  "webOrientation": "auto",
+  "webOrientation": "portrait",
   "wechatgame": {
     "appid": "wx6ac3f5090a6b99c5",
     "orientation": "portrait"
