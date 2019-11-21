@@ -25,7 +25,7 @@ export default class BeeScript extends cc.Component {
     if(!this.leftFinger.getComponent('FingerManager').getIsFingerAlive() &&
         !this.middleFinger.getComponent('FingerManager').getIsFingerAlive() &&
           !this.rightFinger.getComponent('FingerManager').getIsFingerAlive()){
-            this.gameMind.getComponent('GameMind').setGameState(false);
+            this.gameMind.getComponent('Touch').setGameStatus(false);
     }
   }
 

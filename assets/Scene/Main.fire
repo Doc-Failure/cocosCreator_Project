@@ -78,7 +78,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 46
+        "__id__": 47
       }
     ],
     "_prefab": null,
@@ -658,6 +658,9 @@
     },
     "rightFinger": {
       "__id__": 29
+    },
+    "gameMind": {
+      "__id__": 27
     }
   },
   {
@@ -1095,6 +1098,9 @@
     },
     "beeManager": {
       "__id__": 7
+    },
+    "fingersManager": {
+      "__id__": 19
     }
   },
   {
@@ -1557,20 +1563,21 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "BadBeeTitle",
+    "_name": "BadBeeTitleManager",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
     },
-    "_children": [],
+    "_children": [
+      {
+        "__id__": 44
+      }
+    ],
     "_tag": -1,
     "_active": true,
     "_components": [
       {
-        "__id__": 44
-      },
-      {
-        "__id__": 45
+        "__id__": 46
       }
     ],
     "_prefab": null,
@@ -1611,11 +1618,63 @@
     "groupIndex": 0
   },
   {
+    "__type__": "cc.Node",
+    "_name": "BadBeeTitle",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 43
+    },
+    "_children": [],
+    "_tag": -1,
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 45
+      }
+    ],
+    "_prefab": null,
+    "_id": "cfSnvWNLFLxo7LZ2GY8N6d",
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_cascadeOpacityEnabled": true,
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 708,
+      "height": 142
+    },
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_scaleX": 1,
+    "_scaleY": 1,
+    "_position": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_localZOrder": 0,
+    "_globalZOrder": 0,
+    "_opacityModifyRGB": false,
+    "groupIndex": 0
+  },
+  {
     "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 43
+      "__id__": 44
     },
     "_enabled": true,
     "_spriteFrame": {

@@ -19,9 +19,9 @@ export default class NewClass extends cc.Component {
 
     update (dt) {
         if(this.isGameOnManager.getComponent('Touch').getGameStatus()){
-            this.node.active=false;
+            this.node.getChildByName("BadBeeTitle").active=false;
         }else{
-            this.node.active=true;
+            this.node.getChildByName("BadBeeTitle").active=true;
         }
     }
 }

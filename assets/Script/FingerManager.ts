@@ -55,16 +55,20 @@ export default class FingerManager extends cc.Component {
 
   //when the Bee touch a finger it is not more usable
   onCollisionEnter(other, self) {
-    //set the finger as dead
-    this.isFingerAlive = false;
-    //we change the color of the finger
-    this.node.getChildByName("finger").active=false;
-    this.node.getChildByName("fingerOuch").active=true;
-    //and finally we send the finger back
-    this.node.runAction(this.action_goDown);
+      this.setFingerLive(false);
+      //and finally we send the finger back
+      this.node.runAction(this.action_goDown);
   }
 
   getIsFingerAlive() {
       return this.isFingerAlive;
+  }
+
+  setFingerLive(bIsLive:boolean){
+    //set the finger as dead
+    this.isFingerAlive = bIsLive;
+    //we change the color of the finger
+    this.node.getChildByName("finger").active=bIsLive;
+    this.node.getChildByName("fingerOuch").active=!bIsLive;
   }
 }
